@@ -41,10 +41,10 @@ mapStudent[123] = "student_first";
 mapStudent[456] = "student_second";
 ```
 * 以上三种用法，虽然都可以实现数据的插入，但是它们是有区别的，当然了第一种和第二种在效果上是完成一样的，用insert函数插入数据，在数据的 插入上涉及到集合的唯一性这个概念，即当map中有这个关键字时，insert操作是不能在插入数据的，但是用数组方式就不同了，它可以覆盖以前该关键字对 应的值，用程序说明如下：
-  ```c++
+```c++
 mapStudent.insert(map<int, string>::value_type (001, "student_one"));
 mapStudent.insert(map<int, string>::value_type (001, "student_two"));
-  ```
+```
 上面这两条语句执行后，map中001这个关键字对应的值是“student_one”，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下:
 ```c++
 // 构造定义，返回一个pair对象
