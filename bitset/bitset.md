@@ -26,7 +26,7 @@ bitset<N> 表示一个N位的固定大小的序列，可以用于整数和字符
 `bitset<N> temp(); // [0,0,0,0, 0,0,0,0]`
 
 #### 自身构造，长度必须相同
-```
+```c++
 bitset<N> temp1(string("00001001"));
 bitset<N> temp2(temp1); // [0,0,0,0, 1,0,0,1]
 // 或者
@@ -34,7 +34,7 @@ bitset<N> temp2(temp1); // [0,0,0,0, 1,0,0,1]
 ```
 
 ### 整数初始化
-```
+```c++
 bitset(N) temp((unsigned long long)(9));  // [0,0,0,0, 1,0,0,1]
 bitset(N) temp((unsigned long long)(-9)); // [1,1,1,1, 0,1,1,1]
 bitset(N) temp(0b11110111); // [1,1,1,1, 0,1,1,1]
@@ -45,7 +45,7 @@ bitset(N) temp(0b11110111); // [1,1,1,1, 0,1,1,1]
 
 ### 字符串初始化
 * 字符串初始化采用从左到右复制，靠右对齐，不足自动补0，支持string和char[]。
-```
+```c++
 bitset<N> temp(string("00001001")); // [0,0,0,0,1,0,0,1]
 char ch = "01001101;
 bitset<N> temp(ch)); // [0,1,0,0,1,1,0,1]
@@ -63,7 +63,7 @@ bitset<N> temp(ch)); // [0,1,0,0,1,1,0,1]
 1. 指定读取字符串的开始下标
 bitset<N> temp(string, num1)，num1为开始下标，且0≤num<str.length()，向右对齐
 用例1：
-```
+```c++
 bitset<N> temp(string("111100"),0); // [0,0,1,1, 1,1,0,0]
 bitset<N> temp(string("111100"),1); // [0,0,0,1, 1,1,0,0]
 bitset<N> temp(string("111100"),2); // [0,0,0,0, 1,1,0,0]
